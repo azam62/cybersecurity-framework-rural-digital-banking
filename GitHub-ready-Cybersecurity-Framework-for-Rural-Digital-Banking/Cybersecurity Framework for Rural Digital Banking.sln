@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35425.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cybersecurity Framework for Rural Digital Banking", "Cybersecurity Framework for Rural Digital Banking.csproj", "{714394EE-D6D7-48AE-BBEB-4290D50D9096}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{714394EE-D6D7-48AE-BBEB-4290D50D9096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714394EE-D6D7-48AE-BBEB-4290D50D9096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714394EE-D6D7-48AE-BBEB-4290D50D9096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714394EE-D6D7-48AE-BBEB-4290D50D9096}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E962A542-8780-42F2-914E-343A127DA4E0}
+	EndGlobalSection
+EndGlobal

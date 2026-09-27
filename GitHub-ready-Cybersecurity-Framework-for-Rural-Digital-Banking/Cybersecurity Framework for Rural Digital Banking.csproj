@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{714394EE-D6D7-48AE-BBEB-4290D50D9096}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cybersecurity_Framework_for_Rural_Digital_Banking</RootNamespace>
+    <AssemblyName>Cybersecurity Framework for Rural Digital Banking</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44353</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.3.8.0\lib\net462\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Audio, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Audio.3.8.0\lib\net462\Accord.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Math.3.8.0\lib\net462\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="admin\add-interest.aspx" />
+    <Content Include="admin\AddBankScheme.aspx" />
+    <Content Include="admin\AddGovtSchemes.aspx" />
+    <Content Include="admin\admin-deposit.aspx" />
+    <Content Include="admin\admin-withdraw.aspx" />
+    <Content Include="admin\AdminApprovaLlistFull.aspx" />
+    <Content Include="admin\AdminGovtShowSchemes.aspx" />
+    <Content Include="admin\AdminLogin.aspx" />
+    <Content Include="admin\AdminShowBankLoan.aspx" />
+    <Content Include="admin\ApproveUser.aspx" />
+    <Content Include="admin\pending-user.aspx" />
+    <Content Include="admin\Photos\3image.jpg" />
+    <Content Include="admin\Photos\addscheme.jpg" />
+    <Content Include="admin\Photos\backblood.jpeg" />
+    <Content Include="admin\Photos\backimage.png" />
+    <Content Include="admin\Photos\bank1.jpg" />
+    <Content Include="admin\Photos\bank2.jpg" />
+    <Content Include="admin\Photos\bankloan.jpeg" />
+    <Content Include="admin\Photos\banklogo.jpg" />
+    <Content Include="admin\Photos\bloodd.jpg" />
+    <Content Include="admin\Photos\face.jpeg" />
+    <Content Include="admin\Photos\fuphoto.jpeg" />
+    <Content Include="admin\Photos\govtscheme.png" />
+    <Content Include="admin\Photos\logoblood.jpeg" />
+    <Content Include="admin\Photos\pancard.jpeg" />
+    <Content Include="admin\Photos\profileimage.png" />
+    <Content Include="admin\Photos\signature.jpeg" />
+    <Content Include="admin\Photos\Sign_amit.jpeg" />
+    <Content Include="admin\Photos\www.jpg" />
+    <Content Include="admin\search-by-account.aspx" />
+    <Content Include="admin\search-by-name.aspx" />
+    <Content Include="admin\show-details.aspx" />
+    <Content Include="admin\UpdateBankSchmes.aspx" />
+    <Content Include="admin\UpdateGovtScheme.aspx" />
+    <Content Include="admin\userlist.aspx" />
+    <Content Include="assets\demo\chart-area-demo.js" />
+    <Content Include="assets\demo\chart-bar-demo.js" />
+    <Content Include="assets\demo\chart-pie-demo.js" />
+    <Content Include="assets\demo\datatables-demo.js" />
+    <Content Include="assets\img\error-404-monochrome.svg" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="css\styles.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="js\scripts.js" />
+    <Content Include="MailBody.html" />
+    <Content Include="SchemeImages\www.jpg" />
+    <Content Include="user\Aadhar\aadhar_1.jfif" />
+    <Content Include="user\Aadhar\aadhar_1.jpg" />
+    <Content Include="user\Aadhar\aadhar_12.jpg" />
+    <Content Include="user\Aadhar\aadhar_12.png" />
+    <Content Include="user\Aadhar\aadhar_13.jpg" />
+    <Content Include="user\Aadhar\aadhar_14.jpeg" />
+    <Content Include="user\Aadhar\aadhar_15.jpeg" />
+    <Content Include="user\Aadhar\aadhar_16.jpg" />
+    <Content Include="user\Aadhar\aadhar_17.jpg" />
+    <Content Include="user\Aadhar\aadhar_18.jpg" />
+    <Content Include="user\Aadhar\aadhar_19.jpg" />
+    <Content Include="user\Aadhar\aadhar_2.jpg" />
+    <Content Include="user\Aadhar\aadhar_20.jpg" />
+    <Content Include="user\Aadhar\aadhar_21.jpg" />
+    <Content Include="user\Aadhar\aadhar_22.jpg" />
+    <Content Include="user\Aadhar\aadhar_23.jpg" />
+    <Content Include="user\Aadhar\aadhar_24.jpeg" />
+    <Content Include="user\Aadhar\aadhar_25.jpeg" />
+    <Content Include="user\Aadhar\aadhar_26.jpeg" />
+    <Content Include="user\Aadhar\aadhar_27.jpeg" />
+    <Content Include="user\Aadhar\aadhar_27.jpg" />
+    <Content Include="user\Aadhar\aadhar_28.jpeg" />
+    <Content Include="user\Aadhar\aadhar_28.png" />
+    <Content Include="user\Aadhar\aadhar_29.jpeg" />
+    <Content Include="user\Aadhar\aadhar_3.jpg" />
+    <Content Include="user\Aadhar\aadhar_30.jpeg" />
+    <Content Include="user\Aadhar\aadhar_31.jpeg" />
+    <Content Include="user\Aadhar\aadhar_4.jpg" />
+    <Content Include="user\Aadhar\aadhar_5.txt" />
+    <Content Include="user\Aadhar\aadhar_6.txt" />
+    <Content Include="user\Aadhar\aadhar_7.jpeg" />
+    <Content Include="user\Aadhar\aadhar_8.jpg" />
+    <Content Include="user\add-customer.aspx" />
+    <Content Include="user\AIRecommendation.aspx" />
+    <Content Include="user\AI_SpendingAnalysis.aspx" />
+    <Content Include="user\change-password.aspx" />
+    <Content Include="user\Default.aspx" />
+    <Content Include="user\deposit.aspx" />
+    <Content Include="user\edit-profile.aspx" />
+    <Content Include="user\mail-otp.html" />
+    <Content Include="user\PAN\pan_1.jfif" />
+    <Content Include="user\PAN\pan_1.jpg" />
+    <Content Include="user\PAN\pan_12.jpeg" />
+    <Content Include="user\PAN\pan_13.jpg" />
+    <Content Include="user\PAN\pan_14.jpeg" />
+    <Content Include="user\PAN\pan_15.jpg" />
+    <Content Include="user\PAN\pan_16.jpg" />
+    <Content Include="user\PAN\pan_17.jpg" />
+    <Content Include="user\PAN\pan_18.jpg" />
+    <Content Include="user\PAN\pan_19.jpg" />
+    <Content Include="user\PAN\pan_2.jpg" />
+    <Content Include="user\PAN\pan_20.jpg" />
+    <Content Include="user\PAN\pan_21.jpg" />
+    <Content Include="user\PAN\pan_22.jpg" />
+    <Content Include="user\PAN\pan_23.jpg" />
+    <Content Include="user\PAN\pan_24.jpeg" />
+    <Content Include="user\PAN\pan_25.jpeg" />
+    <Content Include="user\PAN\pan_26.jpeg" />
+    <Content Include="user\PAN\pan_27.jpeg" />
+    <Content Include="user\PAN\pan_28.jpeg" />
+    <Content Include="user\PAN\pan_29.jpeg" />
+    <Content Include="user\PAN\pan_3.jpeg" />
+    <Content Include="user\PAN\pan_3.jpg" />
+    <Content Include="user\PAN\pan_30.jpeg" />
+    <Content Include="user\PAN\pan_31.jpeg" />
+    <Content Include="user\PAN\pan_4.jpg" />
+    <Content Include="user\PAN\pan_5.jpeg" />
+    <Content Include="user\PAN\pan_6.jpg" />
+    <Content Include="user\PAN\pan_7.jpeg" />
+    <Content Include="user\PAN\pan_8.jpg" />
+    <Content Include="user\Photos\bank.png" />
+    <Content Include="user\Photos\banklogo.jpg" />
+    <Content Include="user\Photos\photo_1.jfif" />
+    <Content Include="user\Photos\photo_1.jpg" />
+    <Content Include="user\Photos\photo_12.jpeg" />
+    <Content Include="user\Photos\photo_13.jpeg" />
+    <Content Include="user\Photos\photo_14.jpg" />
+    <Content Include="user\Photos\photo_15.jpg" />
+    <Content Include="user\Photos\photo_16.jpg" />
+    <Content Include="user\Photos\photo_17.jpg" />
+    <Content Include="user\Photos\photo_18.jpg" />
+    <Content Include="user\Photos\photo_19.jpg" />
+    <Content Include="user\Photos\photo_2.jpg" />
+    <Content Include="user\Photos\photo_20.jpg" />
+    <Content Include="user\Photos\photo_21.jpg" />
+    <Content Include="user\Photos\photo_22.jpg" />
+    <Content Include="user\Photos\photo_23.jpg" />
+    <Content Include="user\Photos\photo_24.png" />
+    <Content Include="user\Photos\photo_25.png" />
+    <Content Include="user\Photos\photo_26.png" />
+    <Content Include="user\Photos\photo_27.jpeg" />
+    <Content Include="user\Photos\photo_27.jpg" />
+    <Content Include="user\Photos\photo_27.png" />
+    <Content Include="user\Photos\photo_28.jpeg" />
+    <Content Include="user\Photos\photo_28.jpg" />
+    <Content Include="user\Photos\photo_28.png" />
+    <Content Include="user\Photos\photo_29.png" />
+    <Content Include="user\Photos\photo_3.jpg" />
+    <Content Include="user\Photos\photo_30.jpg" />
+    <Content Include="user\Photos\photo_31.png" />
+    <Content Include="user\Photos\photo_4.jpg" />
+    <Content Include="user\Photos\photo_4.png" />
+    <Content Include="user\Photos\photo_5.png" />
+    <Content Include="user\Photos\photo_6.png" />
+    <Content Include="user\Photos\photo_7.png" />
+    <Content Include="user\Photos\photo_8.png" />
+    <Content Include="user\ShowBankSchemes.aspx" />
+    <Content Include="user\ShowGovtSchemes.aspx" />
+    <Content Include="user\Signature\sign_1.jpg" />
+    <Content Include="user\Signature\sign_1.png" />
+    <Content Include="user\Signature\sign_12.jpeg" />
+    <Content Include="user\Signature\sign_12.jpg" />
+    <Content Include="user\Signature\sign_13.jpeg" />
+    <Content Include="user\Signature\sign_14.jpg" />
+    <Content Include="user\Signature\sign_15.jpg" />
+    <Content Include="user\Signature\sign_16.jpg" />
+    <Content Include="user\Signature\sign_17.jpg" />
+    <Content Include="user\Signature\sign_18.jpg" />
+    <Content Include="user\Signature\sign_19.jpg" />
+    <Content Include="user\Signature\sign_2.jpg" />
+    <Content Include="user\Signature\sign_20.jpg" />
+    <Content Include="user\Signature\sign_21.jpg" />
+    <Content Include="user\Signature\sign_22.jpg" />
+    <Content Include="user\Signature\sign_23.jpg" />
+    <Content Include="user\Signature\sign_24.jpeg" />
+    <Content Include="user\Signature\sign_25.jpeg" />
+    <Content Include="user\Signature\sign_26.jpeg" />
+    <Content Include="user\Signature\sign_27.jpeg" />
+    <Content Include="user\Signature\sign_28.jpeg" />
+    <Content Include="user\Signature\sign_29.jpeg" />
+    <Content Include="user\Signature\sign_3.jpeg" />
+    <Content Include="user\Signature\sign_3.png" />
+    <Content Include="user\Signature\sign_30.jpeg" />
+    <Content Include="user\Signature\sign_31.jpeg" />
+    <Content Include="user\Signature\sign_4.jpg" />
+    <Content Include="user\Signature\sign_5.png" />
+    <Content Include="user\Signature\sign_6.png" />
+    <Content Include="user\Signature\sign_7.png" />
+    <Content Include="user\Signature\sign_8.jpg" />
+    <Content Include="user\statement-generate.aspx" />
+    <Content Include="user\withdrawal.aspx" />
+    <Content Include="web_img\about-us.jpg" />
+    <Content Include="web_img\bank1.jpg" />
+    <Content Include="web_img\bank2.jpg" />
+    <Content Include="web_img\brown-pebble-stone.jpg" />
+    <Content Include="web_img\mac-os-el-capitan.jpg" />
+    <Content Include="web_img\Slider1.jpg" />
+    <Content Include="web_img\Slider2.jpg" />
+    <Content Include="web_img\Slider3.jpg" />
+    <Content Include="web_img\user-icon.png" />
+    <Content Include="web_img\user-profile.jpg" />
+    <Content Include="admin\admin-masterpage.Master" />
+    <Content Include="LoginCaptchaHandler.ashx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\AES.cs" />
+    <Content Include="App_Code\BasicCode.cs" />
+    <Compile Include="admin\add-interest.aspx.cs">
+      <DependentUpon>add-interest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\add-interest.aspx.designer.cs">
+      <DependentUpon>add-interest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AddBankScheme.aspx.cs">
+      <DependentUpon>AddBankScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AddBankScheme.aspx.designer.cs">
+      <DependentUpon>AddBankScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AddGovtSchemes.aspx.cs">
+      <DependentUpon>AddGovtSchemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AddGovtSchemes.aspx.designer.cs">
+      <DependentUpon>AddGovtSchemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin-deposit.aspx.cs">
+      <DependentUpon>admin-deposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin-deposit.aspx.designer.cs">
+      <DependentUpon>admin-deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin-masterpage.Master.cs">
+      <DependentUpon>admin-masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin-masterpage.Master.designer.cs">
+      <DependentUpon>admin-masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin-withdraw.aspx.cs">
+      <DependentUpon>admin-withdraw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin-withdraw.aspx.designer.cs">
+      <DependentUpon>admin-withdraw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminApprovaLlistFull.aspx.cs">
+      <DependentUpon>AdminApprovaLlistFull.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminApprovaLlistFull.aspx.designer.cs">
+      <DependentUpon>AdminApprovaLlistFull.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminGovtShowSchemes.aspx.cs">
+      <DependentUpon>AdminGovtShowSchemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminGovtShowSchemes.aspx.designer.cs">
+      <DependentUpon>AdminGovtShowSchemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminShowBankLoan.aspx.cs">
+      <DependentUpon>AdminShowBankLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminShowBankLoan.aspx.designer.cs">
+      <DependentUpon>AdminShowBankLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ApproveUser.aspx.cs">
+      <DependentUpon>ApproveUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ApproveUser.aspx.designer.cs">
+      <DependentUpon>ApproveUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\BasicCode.cs" />
+    <Compile Include="admin\pending-user.aspx.cs">
+      <DependentUpon>pending-user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\pending-user.aspx.designer.cs">
+      <DependentUpon>pending-user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\search-by-account.aspx.cs">
+      <DependentUpon>search-by-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\search-by-account.aspx.designer.cs">
+      <DependentUpon>search-by-account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\search-by-name.aspx.cs">
+      <DependentUpon>search-by-name.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\search-by-name.aspx.designer.cs">
+      <DependentUpon>search-by-name.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\show-details.aspx.cs">
+      <DependentUpon>show-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\show-details.aspx.designer.cs">
+      <DependentUpon>show-details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\UpdateBankSchmes.aspx.cs">
+      <DependentUpon>UpdateBankSchmes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\UpdateBankSchmes.aspx.designer.cs">
+      <DependentUpon>UpdateBankSchmes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\UpdateGovtScheme.aspx.cs">
+      <DependentUpon>UpdateGovtScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\UpdateGovtScheme.aspx.designer.cs">
+      <DependentUpon>UpdateGovtScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\userlist.aspx.cs">
+      <DependentUpon>userlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\userlist.aspx.designer.cs">
+      <DependentUpon>userlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AES.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BasicCode.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="user\add-customer.aspx.cs">
+      <DependentUpon>add-customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\add-customer.aspx.designer.cs">
+      <DependentUpon>add-customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\AIRecommendation.aspx.cs">
+      <DependentUpon>AIRecommendation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\AIRecommendation.aspx.designer.cs">
+      <DependentUpon>AIRecommendation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\AI_SpendingAnalysis.aspx.cs">
+      <DependentUpon>AI_SpendingAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\AI_SpendingAnalysis.aspx.designer.cs">
+      <DependentUpon>AI_SpendingAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\BasicCode.cs" />
+    <Compile Include="user\change-password.aspx.cs">
+      <DependentUpon>change-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\change-password.aspx.designer.cs">
+      <DependentUpon>change-password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\deposit.aspx.cs">
+      <DependentUpon>deposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\deposit.aspx.designer.cs">
+      <DependentUpon>deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\edit-profile.aspx.cs">
+      <DependentUpon>edit-profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\edit-profile.aspx.designer.cs">
+      <DependentUpon>edit-profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\ShowBankSchemes.aspx.cs">
+      <DependentUpon>ShowBankSchemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\ShowBankSchemes.aspx.designer.cs">
+      <DependentUpon>ShowBankSchemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\ShowGovtSchemes.aspx.cs">
+      <DependentUpon>ShowGovtSchemes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\ShowGovtSchemes.aspx.designer.cs">
+      <DependentUpon>ShowGovtSchemes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\statement-generate.aspx.cs">
+      <DependentUpon>statement-generate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\statement-generate.aspx.designer.cs">
+      <DependentUpon>statement-generate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\user-masterpage.Master.cs">
+      <DependentUpon>user-masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\user-masterpage.Master.designer.cs">
+      <DependentUpon>user-masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="user\withdrawal.aspx.cs">
+      <DependentUpon>withdrawal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\withdrawal.aspx.designer.cs">
+      <DependentUpon>withdrawal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="GovtSchmeimg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="user\Aadhar\aadhar_4.docx" />
+    <Content Include="user\user-masterpage.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56657</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44353/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+  <Import Project="packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('packages\Accord.3.8.0\build\Accord.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

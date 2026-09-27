@@ -1,0 +1,277 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user-masterpage.master.cs" Inherits="Cybersecurity_Framework_for_Rural_Digital_Banking.user.user_masterpage" %><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Bank Customer Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* ── HARD RESET — overrides styles.css ── */
+        *, *::before, *::after { box-sizing: border-box !important; }
+        html { height: 100% !important; }
+
+        body {
+            margin: 0 !important; padding: 0 !important;
+            font-family: 'Poppins', sans-serif !important;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+            min-height: 100vh !important;
+            color: #fff !important;
+            overflow-x: hidden !important;
+        }
+
+        /* ── TOPNAV (fixed, full width) ── */
+        #top-navbar {
+            position: fixed !important;
+            top: 0 !important; left: 0 !important; right: 0 !important;
+            height: 56px !important;
+            z-index: 1040 !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0 18px !important;
+            background: linear-gradient(90deg, #001830, #002f5e) !important;
+            border-bottom: 1px solid rgba(0,255,213,0.2) !important;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.6) !important;
+        }
+
+        #top-navbar .brand {
+            font-weight: 700 !important; font-size: 15px !important;
+            color: #00ffd5 !important;
+            text-shadow: 0 0 10px rgba(0,255,213,0.5) !important;
+            text-decoration: none !important;
+            letter-spacing: 0.3px !important;
+            line-height: 1.25 !important;
+            white-space: nowrap !important;
+            margin-right: 12px !important;
+        }
+        #top-navbar .brand:hover { color: #00ffd5 !important; text-decoration: none !important; }
+
+        #top-navbar .nav-btn {
+            background: transparent !important; border: none !important;
+            color: rgba(255,255,255,0.65) !important;
+            font-size: 15px !important; cursor: pointer !important;
+            padding: 8px 10px !important; line-height: 1 !important;
+            transition: color 0.2s !important;
+        }
+        #top-navbar .nav-btn:hover { color: #00ffd5 !important; }
+        #top-navbar .nav-btn.power { margin-left: auto !important; color: rgba(255,100,100,0.75) !important; }
+        #top-navbar .nav-btn.power:hover { color: #ff4444 !important; }
+
+        /* ── OUTER WRAPPER ── */
+        #layout-root {
+            display: flex !important;
+            padding-top: 56px !important;
+            min-height: 100vh !important;
+        }
+
+        /* ── SIDEBAR ── */
+        #sidebar {
+            position: fixed !important;
+            top: 56px !important; left: 0 !important; bottom: 0 !important;
+            width: 215px !important;
+            z-index: 920 !important;
+            overflow-y: auto !important; overflow-x: hidden !important;
+            background: linear-gradient(180deg, #001525 0%, #001e3a 100%) !important;
+            border-right: 1px solid rgba(0,255,213,0.1) !important;
+            display: flex !important; flex-direction: column !important;
+            transition: transform 0.28s ease !important;
+        }
+
+        #sidebar::-webkit-scrollbar { width: 3px !important; }
+        #sidebar::-webkit-scrollbar-thumb { background: rgba(0,255,213,0.18) !important; border-radius: 3px !important; }
+
+        .nav-menu { flex: 1 !important; padding: 6px 0 !important; }
+
+        .nav-heading {
+            display: block !important;
+            font-size: 9.5px !important; font-weight: 700 !important;
+            letter-spacing: 2px !important; text-transform: uppercase !important;
+            color: rgba(0,255,213,0.38) !important;
+            padding: 13px 15px 4px !important;
+        }
+
+        .nav-item-link {
+            display: flex !important; align-items: center !important; gap: 9px !important;
+            padding: 10px 14px !important;
+            color: rgba(185,222,255,0.82) !important;
+            font-size: 13px !important; font-weight: 500 !important;
+            font-family: 'Poppins', sans-serif !important;
+            text-decoration: none !important;
+            border-left: 3px solid transparent !important;
+            border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+            transition: all 0.18s !important;
+            white-space: nowrap !important;
+        }
+        .nav-item-link:hover {
+            background: rgba(0,255,213,0.08) !important;
+            color: #00ffd5 !important;
+            border-left-color: #00ffd5 !important;
+            text-decoration: none !important;
+        }
+        .nav-item-link .nav-icon {
+            color: rgba(0,255,213,0.48) !important;
+            width: 16px !important; text-align: center !important;
+            font-size: 12px !important; flex-shrink: 0 !important;
+        }
+        .nav-item-link .caret { margin-left: auto !important; font-size: 10px !important; color: rgba(0,255,213,0.3) !important; }
+
+        .sub-menu {
+            background: rgba(0,0,0,0.2) !important;
+            border-left: 2px solid rgba(0,255,213,0.1) !important;
+            margin-left: 12px !important;
+        }
+        .sub-menu .nav-item-link {
+            font-size: 12.5px !important; padding: 8px 12px !important;
+            border-left: none !important; gap: 7px !important;
+            color: rgba(165,210,255,0.72) !important;
+        }
+        .sub-menu .nav-item-link:hover { color: #00ffd5 !important; background: rgba(0,255,213,0.06) !important; }
+
+        /* Sidebar footer */
+        .sidebar-footer {
+            padding: 12px 14px !important;
+            background: rgba(0,0,0,0.28) !important;
+            border-top: 1px solid rgba(0,255,213,0.1) !important;
+            font-size: 12px !important;
+        }
+        .sidebar-footer .label-small { font-size: 10px !important; color: rgba(0,255,213,0.45) !important; display: block !important; margin-bottom: 2px !important; }
+        .sidebar-footer .user-name { color: #00ffd5 !important; font-size: 13px !important; font-weight: 600 !important; }
+
+        /* ── CONTENT AREA (the key fix) ── */
+        #page-content {
+            margin-left: 215px !important;
+            flex: 1 !important;
+            width: calc(100% - 215px) !important;
+            min-height: calc(100vh - 56px) !important;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+            overflow-x: hidden !important;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            #sidebar { transform: translateX(-215px) !important; }
+            #sidebar.open { transform: translateX(0) !important; }
+            #page-content { margin-left: 0 !important; width: 100% !important; }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+
+    <!-- Top Navbar -->
+    <nav id="top-navbar">
+        <a class="brand" href="Default.aspx">🏦 Bank Customer<br />Dashboard</a>
+        <button type="button" class="nav-btn" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+        <button id="btnPoweroff" runat="server" onserverclick="btnPoweroff_ServerClick"
+                type="button" class="nav-btn power" title="Logout">
+            <i class="fas fa-power-off"></i>
+        </button>
+    </nav>
+
+    <!-- Layout Root -->
+    <div id="layout-root">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="nav-menu">
+
+                <a class="nav-item-link" href="Default.aspx">
+                    <span class="nav-icon"><i class="fas fa-home"></i></span>Home
+                </a>
+             <%--   <a class="nav-item-link" href="AIRecommendation.aspx">
+                    <span class="nav-icon"><i class="fas fa-robot"></i></span>AI Recommendation
+                </a>
+                <a class="nav-item-link" href="AI_SpendingAnalysis.aspx">
+                    <span class="nav-icon"><i class="fas fa-chart-bar"></i></span>AI Spending Analysis
+                </a>--%>
+                <a class="nav-item-link" href="statement-generate.aspx">
+                    <span class="nav-icon"><i class="fas fa-file-alt"></i></span>Statement Generate
+                </a>
+                <a class="nav-item-link" href="edit-profile.aspx">
+                    <span class="nav-icon"><i class="fas fa-user-edit"></i></span>Edit Profile
+                </a>
+                <a class="nav-item-link" href="change-password.aspx">
+                    <span class="nav-icon"><i class="fas fa-key"></i></span>Change Password
+                </a>
+
+                <span class="nav-heading">Transactions</span>
+
+                <a class="nav-item-link" href="withdrawal.aspx">
+                    <span class="nav-icon"><i class="fas fa-arrow-circle-up"></i></span>Transaction
+                </a>
+              <%--  <a class="nav-item-link" href="deposit.aspx">
+                    <span class="nav-icon"><i class="fas fa-arrow-circle-down"></i></span>Deposits
+                </a>--%>
+
+               <%-- <span class="nav-heading">Schemes</span>
+
+                <a class="nav-item-link" href="#subGovt" data-toggle="collapse" aria-expanded="false">
+                    <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
+                    Govt Schemes
+                    <span class="caret"><i class="fas fa-angle-down"></i></span>
+                </a>
+                <div class="collapse sub-menu" id="subGovt">
+                    <a class="nav-item-link" href="ShowGovtSchemes.aspx">
+                        <span class="nav-icon"><i class="fas fa-list"></i></span>Show Govt Schemes
+                    </a>
+                </div>
+
+                <a class="nav-item-link" href="#subLoan" data-toggle="collapse" aria-expanded="false">
+                    <span class="nav-icon"><i class="fas fa-university"></i></span>
+                    Bank Loan Schemes
+                    <span class="caret"><i class="fas fa-angle-down"></i></span>
+                </a>
+                <div class="collapse sub-menu" id="subLoan">
+                    <a class="nav-item-link" href="ShowBankSchemes.aspx">
+                        <span class="nav-icon"><i class="fas fa-list"></i></span>Show Bank Loan
+                    </a>
+                </div>--%>
+
+                <span class="nav-heading">Account</span>
+                <a class="nav-item-link" href="../Default.aspx">
+                    <span class="nav-icon"><i class="fas fa-sign-out-alt"></i></span>Logout
+                </a>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="sidebar-footer">
+                <span class="label-small">Logged in as:</span>
+                <asp:Label ID="lblUser" runat="server" Text="" CssClass="user-name"></asp:Label>
+            </div>
+        </aside>
+        <!-- /Sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+    </div><!-- /layout-root -->
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="~/js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="~/assets/demo/chart-area-demo.js"></script>
+<script src="~/assets/demo/chart-bar-demo.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="~/assets/demo/datatables-demo.js"></script>
+
+<script>
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>

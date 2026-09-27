@@ -1,0 +1,22 @@
+# Visual Studio / .NET generated files
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.pdb
+*.cache
+
+# Local configuration / secrets
+.env
+Web.config.local
+
+# Runtime/generated recordings
+TempLoginVoice/
+VoiceFiles/
+*.webm
+
+# Logs
+*.log
+VoiceScore_Log.txt
